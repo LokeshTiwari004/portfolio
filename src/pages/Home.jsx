@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Download } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { loadProjectsData, loadAllMarkdownPosts } from '../lib/markdown'
 
@@ -62,7 +62,7 @@ export default function Home() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 flex-wrap">
               <Link to="/projects" className="btn-primary">
                 View My Projects
                 <ArrowRight size={20} />
@@ -70,6 +70,10 @@ export default function Home() {
               <Link to="/contact" className="btn-secondary">
                 Get In Touch
               </Link>
+              <a href="/data/Resume.pdf" download className="btn-secondary inline-flex items-center justify-center gap-2">
+                <Download size={20} />
+                Download Resume
+              </a>
             </div>
 
             {/* Stats */}

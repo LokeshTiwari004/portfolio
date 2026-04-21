@@ -87,16 +87,16 @@ export default function About() {
                    I'm passionate about continuous learning, staying updated with the latest technologies, and sharing knowledge 
                    with the community through writing and mentoring.
                  </p>
-                <div className="flex flex-wrap gap-4">
-                  <a href="mailto:you@example.com" className="btn-primary">
-                    <Mail size={20} />
-                    Contact Me
-                  </a>
-                  <a href="#resume" className="btn-secondary">
-                    <Download size={20} />
-                    Download Resume
-                  </a>
-                </div>
+                 <div className="flex flex-wrap gap-4">
+                   <a href="mailto:you@example.com" className="btn-primary">
+                     <Mail size={20} />
+                     Contact Me
+                   </a>
+                   <a href="/data/Resume.pdf" download className="btn-secondary">
+                     <Download size={20} />
+                     Download Resume
+                   </a>
+                 </div>
               </div>
             </div>
 
@@ -209,7 +209,30 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+       </section>
+
+       {/* Resume Section */}
+       <section className="py-16 mb-20">
+         <div className="container mx-auto px-4">
+           <div className="max-w-3xl mx-auto">
+             <div className="card bg-gradient-to-br from-slate-100 dark:from-[#1E293B] to-slate-50 dark:to-[#0F172A] border border-accent border-opacity-30">
+               <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                 <div>
+                   <h2 className="text-3xl font-bold mb-3">My Resume</h2>
+                   <p className="text-slate-600 dark:text-[#94A3B8] mb-4 leading-relaxed">
+                     Download my complete resume to see detailed information about my experience, education, skills, and achievements.
+                   </p>
+                   <a href="/data/Resume.pdf" download className="btn-primary inline-flex items-center gap-2">
+                     <Download size={20} />
+                     Download PDF Resume
+                   </a>
+                 </div>
+                 <div className="text-6xl">📄</div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
 
        {/* Social Links Section */}
        <section className="py-16 mb-20 bg-slate-100 dark:bg-[#0A0F1F] rounded-2xl transition-colors duration-300">
