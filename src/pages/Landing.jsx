@@ -91,21 +91,21 @@ export default function Landing() {
               </a>
             </div>
 
-            {/* Stats with Parallax */}
-            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-16" style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
-              <div className="text-center">
-                <div className="text-5xl font-bold gradient-text mb-2">9.16</div>
-                <p className="text-slate-600 dark:text-[#94A3B8]">CGPA</p>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl font-bold gradient-text mb-2">4</div>
-                <p className="text-slate-600 dark:text-[#94A3B8]">Projects</p>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl font-bold gradient-text mb-2">94%</div>
-                <p className="text-slate-600 dark:text-[#94A3B8]">Best Accuracy</p>
-              </div>
-            </div>
+            {/* Stats */}
+             <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-16">
+               <div className="text-center">
+                 <div className="text-5xl font-bold gradient-text mb-2">9.16</div>
+                 <p className="text-slate-600 dark:text-[#94A3B8]">CGPA</p>
+               </div>
+               <div className="text-center">
+                 <div className="text-5xl font-bold gradient-text mb-2">4</div>
+                 <p className="text-slate-600 dark:text-[#94A3B8]">Projects</p>
+               </div>
+               <div className="text-center">
+                 <div className="text-5xl font-bold gradient-text mb-2">94%</div>
+                 <p className="text-slate-600 dark:text-[#94A3B8]">Best Accuracy</p>
+               </div>
+             </div>
           </div>
         </div>
 
@@ -195,76 +195,77 @@ export default function Landing() {
         <div className="container mx-auto px-4">
           <h2 className="text-5xl md:text-6xl font-bold mb-16 text-center">Featured Projects</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {!loading && featuredProjects.length > 0 ? (
-              featuredProjects.map((project, idx) => (
-                <div
-                  key={project.id}
-                  className="card group h-full transform hover:scale-105 hover:shadow-2xl transition-all duration-300"
-                  style={{ transform: `translateY(${scrollY * 0.05 * (idx + 1)}px)` }}
-                >
-                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {project.image}
-                  </div>
+           <div className="overflow-x-auto pb-4 -mx-4 px-4 scroll-container">
+             <div className="flex gap-8 min-w-max">
+               {!loading && featuredProjects.length > 0 ? (
+                 featuredProjects.map((project) => (
+                   <div
+                     key={project.id}
+                     className="card group w-96 flex-shrink-0 h-full hover:shadow-2xl transition-all duration-300"
+                   >
+                   <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                     {project.image}
+                   </div>
 
-                  <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-[#14B8A6] transition-colors">
-                    {project.title}
-                  </h3>
+                   <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-[#14B8A6] transition-colors">
+                     {project.title}
+                   </h3>
 
-                  <p className="text-slate-600 dark:text-[#94A3B8] mb-4">
-                    {project.description}
-                  </p>
+                   <p className="text-slate-600 dark:text-[#94A3B8] mb-4">
+                     {project.description}
+                   </p>
 
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs font-semibold text-accent bg-[#0F766E] bg-opacity-20 dark:bg-opacity-30 px-3 py-1 rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                   <div className="flex flex-wrap gap-2 mb-6">
+                     {project.tags.map((tag) => (
+                       <span
+                         key={tag}
+                         className="text-xs font-semibold text-accent bg-[#0F766E] bg-opacity-20 dark:bg-opacity-30 px-3 py-1 rounded-full"
+                       >
+                         {tag}
+                       </span>
+                     ))}
+                   </div>
 
-                  {project.metrics && (
-                    <div className="flex flex-wrap gap-4 mb-6 pb-6 border-b border-slate-200 dark:border-[#1E293B]">
-                      {Object.entries(project.metrics).map(([key, value]) => (
-                        <div key={key} className="flex flex-col">
-                          <span className="text-xs text-slate-600 dark:text-[#94A3B8] capitalize">{key}</span>
-                          <span className="text-sm font-bold text-[#14B8A6]">{value}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                   {project.metrics && (
+                     <div className="flex flex-wrap gap-4 mb-6 pb-6 border-b border-slate-200 dark:border-[#1E293B]">
+                       {Object.entries(project.metrics).map(([key, value]) => (
+                         <div key={key} className="flex flex-col">
+                           <span className="text-xs text-slate-600 dark:text-[#94A3B8] capitalize">{key}</span>
+                           <span className="text-sm font-bold text-[#14B8A6]">{value}</span>
+                         </div>
+                       ))}
+                     </div>
+                   )}
 
-                  <div className="flex gap-3 pt-4 border-t border-slate-200 dark:border-[#1E293B]">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-2 text-accent hover:text-[#14B8A6] transition-colors text-sm font-semibold py-2 rounded hover:bg-[#0F766E] hover:bg-opacity-20"
-                    >
-                      <ExternalLink size={16} />
-                      Demo
-                    </a>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-2 text-accent hover:text-[#14B8A6] transition-colors text-sm font-semibold py-2 rounded hover:bg-[#0F766E] hover:bg-opacity-20"
-                    >
-                      <Code size={16} />
-                      Code
-                    </a>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="col-span-full text-center py-8">
-                <p className="text-slate-600 dark:text-[#94A3B8]">Loading projects...</p>
-              </div>
-            )}
-          </div>
+                   <div className="flex gap-3 pt-4 border-t border-slate-200 dark:border-[#1E293B]">
+                     <a
+                       href={project.link}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="flex-1 inline-flex items-center justify-center gap-2 text-accent hover:text-[#14B8A6] transition-colors text-sm font-semibold py-2 rounded hover:bg-[#0F766E] hover:bg-opacity-20"
+                     >
+                       <ExternalLink size={16} />
+                       Demo
+                     </a>
+                     <a
+                       href={project.github}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="flex-1 inline-flex items-center justify-center gap-2 text-accent hover:text-[#14B8A6] transition-colors text-sm font-semibold py-2 rounded hover:bg-[#0F766E] hover:bg-opacity-20"
+                     >
+                       <Code size={16} />
+                       Code
+                     </a>
+                   </div>
+                 </div>
+               ))
+               ) : (
+                 <div className="text-center py-8 w-full">
+                   <p className="text-slate-600 dark:text-[#94A3B8]">Loading projects...</p>
+                 </div>
+               )}
+             </div>
+           </div>
 
           <div className="text-center mt-16">
             <a href="/blog" className="btn-primary inline-flex items-center gap-2">

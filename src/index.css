@@ -85,8 +85,31 @@
     background-size: cover;
   }
 
-  /* Anchor link offset for fixed header */
-  html {
-    scroll-padding-top: 80px;
-  }
+   /* Anchor link offset for fixed header */
+   html {
+     scroll-padding-top: 80px;
+   }
+
+   /* Horizontal scroll for projects */
+   .scroll-container {
+     scroll-behavior: smooth;
+     -webkit-overflow-scrolling: touch;
+   }
+
+   .scroll-container::-webkit-scrollbar {
+     height: 8px;
+   }
+
+   .scroll-container::-webkit-scrollbar-track {
+     background: transparent;
+   }
+
+   .scroll-container::-webkit-scrollbar-thumb {
+     background: rgba(20, 184, 166, 0.3);
+     border-radius: 4px;
+   }
+
+   .scroll-container::-webkit-scrollbar-thumb:hover {
+     background: rgba(20, 184, 166, 0.5);
+   }
 }
