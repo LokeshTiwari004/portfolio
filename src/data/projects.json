@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Real-time Data Analytics Dashboard",
+    "description": "Built an interactive dashboard that processes and visualizes real-time data streams from multiple sources. Features include live metrics, custom reports, and predictive insights.",
+    "image": "📊",
+    "tags": ["React", "Python", "Data Viz", "PostgreSQL"],
+    "category": "Analytics",
+    "link": "https://example.com",
+    "github": "https://github.com",
+    "featured": true,
+    "metrics": {
+      "performance": "94%",
+      "accuracy": "99.2%"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Customer Segmentation ML Model",
+    "description": "Machine learning model using clustering algorithms to segment customers for targeted marketing campaigns. Achieved 94% accuracy with improved targeting ROI.",
+    "image": "🤖",
+    "tags": ["ML", "Python", "Scikit-learn", "Analytics"],
+    "category": "Machine Learning",
+    "link": "https://example.com",
+    "github": "https://github.com",
+    "featured": true,
+    "metrics": {
+      "accuracy": "94%",
+      "segments": "12"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Web Scraping & Data Pipeline",
+    "description": "Automated web scraper with ETL pipeline for gathering and processing competitive intelligence data. Handles 10K+ records daily with 99.8% reliability.",
+    "image": "🕷️",
+    "tags": ["Python", "Web Scraping", "ETL", "Automation"],
+    "category": "Data Engineering",
+    "link": "https://example.com",
+    "github": "https://github.com",
+    "featured": false,
+    "metrics": {
+      "reliability": "99.8%",
+      "daily_records": "10K+"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Sentiment Analysis API",
+    "description": "REST API for analyzing sentiment from text using NLP and deep learning models. Achieves 89% accuracy across multiple languages with sub-100ms response times.",
+    "image": "💬",
+    "tags": ["NLP", "Python", "FastAPI", "Deep Learning"],
+    "category": "Machine Learning",
+    "link": "https://example.com",
+    "github": "https://github.com",
+    "featured": false,
+    "metrics": {
+      "accuracy": "89%",
+      "languages": "5"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Time Series Forecasting System",
+    "description": "ARIMA and Prophet-based forecasting models predicting sales trends with 92% accuracy. Includes confidence intervals and anomaly detection.",
+    "image": "📈",
+    "tags": ["Time Series", "Python", "Statistics", "Forecasting"],
+    "category": "Analytics",
+    "link": "https://example.com",
+    "github": "https://github.com",
+    "featured": false,
+    "metrics": {
+      "accuracy": "92%",
+      "mape": "5.2%"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Image Classification Model",
+    "description": "CNN-based deep learning model for product classification achieving 95% accuracy on validation set. Handles 50+ product categories.",
+    "image": "🖼️",
+    "tags": ["Deep Learning", "CNN", "TensorFlow", "Computer Vision"],
+    "category": "Machine Learning",
+    "link": "https://example.com",
+    "github": "https://github.com",
+    "featured": true,
+    "metrics": {
+      "accuracy": "95%",
+      "categories": "50+"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Data Quality Monitoring System",
+    "description": "Automated system for monitoring data quality across multiple sources. Detects anomalies, missing values, and data drift with configurable alerts.",
+    "image": "✅",
+    "tags": ["Python", "Data Quality", "Monitoring", "Automation"],
+    "category": "Data Engineering",
+    "link": "https://example.com",
+    "github": "https://github.com",
+    "featured": false,
+    "metrics": {
+      "sources": "15+",
+      "uptime": "99.9%"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Recommendation Engine",
+    "description": "Collaborative filtering based recommendation system serving 1M+ users. Uses matrix factorization for personalized product recommendations.",
+    "image": "⭐",
+    "tags": ["Machine Learning", "Python", "Recommendation Systems", "Scalable"],
+    "category": "Machine Learning",
+    "link": "https://example.com",
+    "github": "https://github.com",
+    "featured": true,
+    "metrics": {
+      "users": "1M+",
+      "ctr": "12.5%"
+    }
+  }
+]
