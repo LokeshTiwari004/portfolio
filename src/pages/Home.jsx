@@ -53,12 +53,12 @@ export default function Home() {
 
             {/* Main Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Hi, I'm <span className="gradient-text">Your Name</span>
+              Hi, I'm <span className="gradient-text">Lokesh Tiwari</span>
             </h1>
 
             {/* Subheading */}
             <p className="text-xl md:text-2xl text-slate-600 dark:text-[#94A3B8] mb-8 leading-relaxed">
-              Data Scientist & Generalist turning data into insights and building innovative solutions
+              Data Science Student at IIT Madras | Deep Learning & NLP Enthusiast | Building ML Solutions with Python & PyTorch
             </p>
 
             {/* CTA Buttons */}
@@ -70,7 +70,7 @@ export default function Home() {
               <Link to="/contact" className="btn-secondary">
                 Get In Touch
               </Link>
-              <a href="/data/Resume.pdf" download className="btn-secondary inline-flex items-center justify-center gap-2">
+              <a href="/Resume.pdf" download="Lokesh_Tiwari_Resume.pdf" className="btn-secondary inline-flex items-center justify-center gap-2">
                 <Download size={20} />
                 Download Resume
               </a>

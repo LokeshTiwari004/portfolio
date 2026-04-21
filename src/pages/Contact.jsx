@@ -20,38 +20,38 @@ export default function Contact() {
       <section className="py-12 mb-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-12">
-             {/* Email */}
-             <div className="card text-center">
-               <div className="text-4xl mb-4 flex justify-center">
-                 <Mail className="text-accent" size={40} />
-               </div>
-               <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">Email</h3>
-               <a href="mailto:your@email.com" className="text-[#14B8A6] hover:text-accent transition-colors">
-                 your@email.com
-               </a>
-             </div>
+              {/* Email */}
+              <div className="card text-center">
+                <div className="text-4xl mb-4 flex justify-center">
+                  <Mail className="text-accent" size={40} />
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">Email</h3>
+                <a href="mailto:lokeshtiwari001vns@gmail.com" className="text-[#14B8A6] hover:text-accent transition-colors">
+                  lokeshtiwari001vns@gmail.com
+                </a>
+              </div>
 
-             {/* Phone */}
-             <div className="card text-center">
-               <div className="text-4xl mb-4 flex justify-center">
-                 <Phone className="text-accent" size={40} />
-               </div>
-               <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">Phone</h3>
-               <a href="tel:+1234567890" className="text-[#14B8A6] hover:text-accent transition-colors">
-                 +1 (234) 567-890
-               </a>
-             </div>
+              {/* Phone */}
+              <div className="card text-center">
+                <div className="text-4xl mb-4 flex justify-center">
+                  <Phone className="text-accent" size={40} />
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">Phone</h3>
+                <a href="tel:+916386336910" className="text-[#14B8A6] hover:text-accent transition-colors">
+                  +91 6386 336 910
+                </a>
+              </div>
 
-             {/* Location */}
-             <div className="card text-center">
-               <div className="text-4xl mb-4 flex justify-center">
-                 <MapPin className="text-accent" size={40} />
-               </div>
-               <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">Location</h3>
-               <p className="text-[#14B8A6]">
-                 San Francisco, CA
-               </p>
-             </div>
+              {/* Location */}
+              <div className="card text-center">
+                <div className="text-4xl mb-4 flex justify-center">
+                  <MessageCircle className="text-accent" size={40} />
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">LinkedIn</h3>
+                <a href="https://linkedin.com/in/lokeshtiwari" target="_blank" rel="noopener noreferrer" className="text-[#14B8A6] hover:text-accent transition-colors">
+                  linkedin.com/in/lokeshtiwari
+                </a>
+              </div>
           </div>
         </div>
       </section>

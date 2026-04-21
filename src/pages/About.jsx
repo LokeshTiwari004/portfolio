@@ -2,57 +2,50 @@ import { Download, Mail, MessageCircle, Share2, Code } from 'lucide-react'
 
 export default function About() {
   const skills = {
-    "Data Science & ML": ["Machine Learning", "Python", "TensorFlow", "Scikit-learn", "Statistical Analysis"],
-    "Data Engineering": ["ETL Pipelines", "SQL", "Apache Spark", "Data Warehousing", "Web Scraping"],
-    "Data Visualization": ["Tableau", "Power BI", "Matplotlib", "Plotly", "Data Storytelling"],
-    "Backend & Frontend": ["React", "Python/Django", "JavaScript", "PostgreSQL", "APIs"],
-    "Tools & Platforms": ["Git", "Docker", "AWS", "Jupyter", "Linux"]
+    "Programming": ["Python", "Java", "SQL", "Bash"],
+    "ML/DL": ["PyTorch", "Scikit-learn", "HuggingFace", "TensorFlow"],
+    "Data Tools": ["Pandas", "NumPy", "Matplotlib", "Plotly"],
+    "DevOps": ["Git", "Docker", "Jupyter Notebooks", "VS Code"],
+    "Concepts": ["Neural Networks", "NLP", "Deep Learning", "Supervised Learning"]
   }
 
   const experience = [
     {
-      title: "Senior Data Scientist",
-      company: "Tech Company",
-      duration: "2022 - Present",
-      description: "Led ML projects for customer insights, built recommendation systems, and mentored junior team members.",
-      highlights: ["Developed ML models with 94% accuracy", "Built automated reporting dashboards", "Led team of 3 engineers"]
+      title: "Data Science Student",
+      company: "Indian Institute of Technology Madras",
+      duration: "Sep 2022 - Apr 2027",
+      description: "Pursuing BS in Data Science and Applications with a focus on Deep Learning, NLP, and ML systems.",
+      highlights: ["CGPA: 9.16/10.0", "Completed projects in NLP and Neural Networks", "Hands-on with PyTorch and HuggingFace"]
     },
     {
-      title: "Data Analyst",
-      company: "Analytics Firm",
-      duration: "2020 - 2022",
-      description: "Performed statistical analysis, created dashboards, and provided actionable business insights.",
-      highlights: ["Created 50+ data visualizations", "Reduced query time by 40%", "Led 10+ client projects"]
-    },
-    {
-      title: "Junior Developer",
-      company: "Startup",
-      duration: "2019 - 2020",
-      description: "Developed full-stack features, worked with databases, and contributed to product development.",
-      highlights: ["Built REST APIs", "Implemented database optimizations", "Launched 3 product features"]
+      title: "Deep Learning & NLP Enthusiast",
+      company: "Self-Taught & Projects",
+      duration: "2023 - Present",
+      description: "Building practical ML solutions and contributing to open-source projects.",
+      highlights: ["Social Media Extremism Detection using Transformers (94% accuracy)", "Diabetes Prediction with Neural Networks", "Loan Payback Prediction classifier (0.922 ROC AUC)"]
     }
   ]
 
   const education = [
     {
-      degree: "Master's in Data Science",
-      school: "University Name",
-      year: "2019",
-      details: "Focus on Machine Learning and Statistical Analysis"
+      degree: "BS in Data Science and Applications",
+      school: "Indian Institute of Technology Madras",
+      year: "2022 - 2027",
+      details: "CGPA: 9.16/10.0"
     },
     {
-      degree: "Bachelor's in Computer Science",
-      school: "University Name",
-      year: "2017",
-      details: "Minor in Mathematics"
+      degree: "High School & Intermediate",
+      school: "Central Hindu Boys School",
+      year: "2017 - 2021",
+      details: "Percentage: 95%"
     }
   ]
 
   const certifications = [
-    "TensorFlow Developer Certificate",
-    "AWS Certified Machine Learning",
-    "Google Data Analytics Certificate",
-    "Advanced Python for Data Science"
+    "Deep Learning Fundamentals",
+    "Natural Language Processing",
+    "Neural Networks & Architecture Design",
+    "Machine Learning with Scikit-learn & PyTorch"
   ]
 
   return (
@@ -63,8 +56,7 @@ export default function About() {
           <div className="max-w-3xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">About Me</h1>
             <p className="text-xl text-slate-600 dark:text-[#94A3B8] leading-relaxed">
-              I'm a passionate Data Scientist and Generalist with 5+ years of experience turning data into actionable insights. 
-              I specialize in machine learning, data engineering, and building scalable solutions that drive business impact.
+              I'm Lokesh Tiwari, a Data Science student at IIT Madras with a passion for Deep Learning and NLP. I specialize in building practical ML solutions, working with Transformers, and solving complex data problems using Python and PyTorch.
             </p>
           </div>
         </div>
@@ -77,22 +69,19 @@ export default function About() {
             {/* Avatar & Bio */}
             <div className="md:col-span-2">
                <div className="card">
-                 <h2 className="text-2xl font-bold mb-4">Professional Background</h2>
-                 <p className="text-slate-600 dark:text-[#94A3B8] mb-4 leading-relaxed">
-                   With a background in Computer Science and a Master's in Data Science, I've worked across various industries 
-                   solving complex data problems. My expertise spans from building ML models to engineering data pipelines and 
-                   creating compelling visualizations.
-                 </p>
-                 <p className="text-slate-600 dark:text-[#94A3B8] mb-6 leading-relaxed">
-                   I'm passionate about continuous learning, staying updated with the latest technologies, and sharing knowledge 
-                   with the community through writing and mentoring.
-                 </p>
+                  <h2 className="text-2xl font-bold mb-4">Professional Background</h2>
+                  <p className="text-slate-600 dark:text-[#94A3B8] mb-4 leading-relaxed">
+                    Currently pursuing a BS in Data Science and Applications at IIT Madras with a CGPA of 9.16/10. My expertise spans Deep Learning, Natural Language Processing, and building machine learning models with PyTorch and HuggingFace Transformers.
+                  </p>
+                  <p className="text-slate-600 dark:text-[#94A3B8] mb-6 leading-relaxed">
+                    I have worked on diverse projects including Social Media Extremism Detection using fine-tuned BERT models (94% accuracy), Diabetes Prediction using Neural Networks, and Loan Payback Prediction achieving 0.922 ROC AUC. I'm passionate about practical ML applications and continuous learning.
+                  </p>
                  <div className="flex flex-wrap gap-4">
-                   <a href="mailto:you@example.com" className="btn-primary">
+                   <a href="mailto:lokeshtiwari001vns@gmail.com" className="btn-primary">
                      <Mail size={20} />
                      Contact Me
                    </a>
-                   <a href="/data/Resume.pdf" download className="btn-secondary">
+                   <a href="/Resume.pdf" download="Lokesh_Tiwari_Resume.pdf" className="btn-secondary">
                      <Download size={20} />
                      Download Resume
                    </a>
@@ -100,21 +89,21 @@ export default function About() {
               </div>
             </div>
 
-             {/* Quick Stats */}
-             <div className="space-y-4">
-               <div className="card text-center">
-                 <div className="text-4xl font-bold gradient-text mb-2">5+</div>
-                 <p className="text-slate-600 dark:text-[#94A3B8]">Years Experience</p>
-               </div>
-               <div className="card text-center">
-                 <div className="text-4xl font-bold gradient-text mb-2">15+</div>
-                 <p className="text-slate-600 dark:text-[#94A3B8]">Projects Completed</p>
-               </div>
-               <div className="card text-center">
-                 <div className="text-4xl font-bold gradient-text mb-2">50+</div>
-                 <p className="text-slate-600 dark:text-[#94A3B8]">Happy Clients</p>
-               </div>
-             </div>
+              {/* Quick Stats */}
+              <div className="space-y-4">
+                <div className="card text-center">
+                  <div className="text-4xl font-bold gradient-text mb-2">9.16</div>
+                  <p className="text-slate-600 dark:text-[#94A3B8]">CGPA at IIT</p>
+                </div>
+                <div className="card text-center">
+                  <div className="text-4xl font-bold gradient-text mb-2">6+</div>
+                  <p className="text-slate-600 dark:text-[#94A3B8]">Projects Built</p>
+                </div>
+                <div className="card text-center">
+                  <div className="text-4xl font-bold gradient-text mb-2">94%</div>
+                  <p className="text-slate-600 dark:text-[#94A3B8]">Best Accuracy</p>
+                </div>
+              </div>
           </div>
         </div>
       </section>
@@ -220,9 +209,9 @@ export default function About() {
                  <div>
                    <h2 className="text-3xl font-bold mb-3">My Resume</h2>
                    <p className="text-slate-600 dark:text-[#94A3B8] mb-4 leading-relaxed">
-                     Download my complete resume to see detailed information about my experience, education, skills, and achievements.
+                     Download my complete resume to see detailed information about my education, projects, skills, and achievements in Deep Learning and Data Science.
                    </p>
-                   <a href="/data/Resume.pdf" download className="btn-primary inline-flex items-center gap-2">
+                   <a href="/Resume.pdf" download="Lokesh_Tiwari_Resume.pdf" className="btn-primary inline-flex items-center gap-2">
                      <Download size={20} />
                      Download PDF Resume
                    </a>
@@ -241,7 +230,7 @@ export default function About() {
            
            <div className="flex flex-wrap justify-center gap-6 max-w-2xl mx-auto mb-12">
              <a
-               href="https://github.com"
+               href="https://github.com/LokeshTiwari004"
                target="_blank"
                rel="noopener noreferrer"
                className="card inline-flex items-center gap-3 px-6 py-4 hover:border-[#14B8A6]"
@@ -250,7 +239,7 @@ export default function About() {
                <span className="font-semibold">GitHub</span>
              </a>
              <a
-               href="https://linkedin.com"
+               href="https://linkedin.com/in/lokeshtiwari"
                target="_blank"
                rel="noopener noreferrer"
                className="card inline-flex items-center gap-3 px-6 py-4 hover:border-[#14B8A6]"
@@ -268,7 +257,7 @@ export default function About() {
                <span className="font-semibold">Twitter</span>
              </a>
              <a
-               href="mailto:you@example.com"
+               href="mailto:lokeshtiwari001vns@gmail.com"
                className="card inline-flex items-center gap-3 px-6 py-4 hover:border-[#14B8A6]"
              >
                <Mail size={24} className="text-accent" />
