@@ -6,8 +6,8 @@
     "image": "🧠",
     "tags": ["NLP", "Deep Learning", "Transformers", "HuggingFace"],
     "category": "Deep Learning",
-    "link": "https://github.com/LokeshTiwari004/extremism-detection",
-    "github": "https://github.com/LokeshTiwari004/extremism-detection",
+    "link": "https://github.com/LokeshTiwari004/Social-Media-Extremism-Detection-Challenge",
+    "github": "https://github.com/LokeshTiwari004/Social-Media-Extremism-Detection-Challenge",
     "featured": true,
     "metrics": {
       "accuracy": "94%",
@@ -28,8 +28,8 @@
     "image": "🏥",
     "tags": ["PyTorch", "Neural Networks", "Deep Learning", "Python"],
     "category": "Deep Learning",
-    "link": "https://github.com/LokeshTiwari004/diabetes-prediction",
-    "github": "https://github.com/LokeshTiwari004/diabetes-prediction",
+    "link": "https://www.kaggle.com/code/lokeshvns/feedforwardneuralnetwork",
+    "github": "https://www.kaggle.com/code/lokeshvns/feedforwardneuralnetwork",
     "featured": true,
     "metrics": {
       "metric": "Binary AUROC",
@@ -50,8 +50,8 @@
     "image": "💳",
     "tags": ["Machine Learning", "XGBoost", "Classification", "Python"],
     "category": "Machine Learning",
-    "link": "https://github.com/LokeshTiwari004/loan-prediction",
-    "github": "https://github.com/LokeshTiwari004/loan-prediction",
+    "link": "https://www.kaggle.com/code/lokeshvns/predicting-loan-paybacks",
+    "github": "https://www.kaggle.com/code/lokeshvns/predicting-loan-paybacks",
     "featured": true,
     "metrics": {
       "roc_auc": "0.922",
@@ -72,8 +72,8 @@
     "image": "🅿️",
     "tags": ["Flask", "Python", "Web Development", "SQLAlchemy"],
     "category": "Web Development",
-    "link": "https://github.com/LokeshTiwari004/parking-management",
-    "github": "https://github.com/LokeshTiwari004/parking-management",
+    "link": "https://github.com/22f3002229/vehivle_parking_app_v1",
+    "github": "https://github.com/22f3002229/vehivle_parking_app_v1",
     "featured": false,
     "metrics": {
       "framework": "Flask",
