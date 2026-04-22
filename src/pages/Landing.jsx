@@ -82,7 +82,8 @@ export default function Landing() {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
-            transform: `translateY(${scrollY * 0.3}px)`
+            transform: `translateY(${scrollY * 0.3}px)`,
+            filter: 'blur(8px)'
           }}
         >
           <div 
