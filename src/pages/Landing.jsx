@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ArrowRight, Download, ExternalLink, Code, Mail, Linkedin, ChevronDown } from 'lucide-react'
+import { ArrowRight, Download, ExternalLink, Code, Mail, Share2, ChevronDown } from 'lucide-react'
 import { loadProjectsData } from '../lib/markdown'
 import ContactForm from '../components/ContactForm'
 import { useIntersectionObserver } from '../utils/useIntersectionObserver'
@@ -351,7 +351,7 @@ export default function Landing() {
 
                 <div className="card text-center hover:border-accent hover:scale-105 hover:shadow-xl transition-all duration-300 active:scale-95">
                   <div className="mb-4 flex justify-center transition-all duration-300 group-hover:scale-110">
-                    <Linkedin className="text-accent group-hover:scale-125 transition-transform duration-300" size={48} />
+                    <Share2 className="text-accent group-hover:scale-125 transition-transform duration-300" size={48} />
                   </div>
                   <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">LinkedIn</h3>
                   <a href="https://linkedin.com/in/lokesh-tiwari-" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-[#14B8A6] font-semibold hover:underline transition-all duration-200">
