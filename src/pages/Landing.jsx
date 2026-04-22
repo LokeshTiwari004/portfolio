@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useContext } from 'react'
 import { ArrowRight, Download, ExternalLink, Code, Mail, Share2, ChevronDown } from 'lucide-react'
 import { loadProjectsData } from '../lib/markdown'
 import ContactForm from '../components/ContactForm'
 import { useIntersectionObserver } from '../utils/useIntersectionObserver'
+import { ThemeContext } from '../context/ThemeContext'
 
 export default function Landing() {
   const [featuredProjects, setFeaturedProjects] = useState([])
@@ -11,6 +12,7 @@ export default function Landing() {
   const [expandedProject, setExpandedProject] = useState(null)
   const [maxCardHeight, setMaxCardHeight] = useState(0)
   const projectsContainerRef = useRef(null)
+  const { isDark } = useContext(ThemeContext)
 
   // Intersection observers for sections
   const [heroRef, heroVisible] = useIntersectionObserver()
@@ -76,7 +78,7 @@ export default function Landing() {
         <div
           className="absolute inset-0 -z-10"
           style={{
-            backgroundImage: 'url(/data/bg.png)',
+            backgroundImage: `url(/data/${isDark ? 'bg.png' : 'bg-light.png'})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
