@@ -354,8 +354,8 @@ export default function Landing() {
                     <Share2 className="text-accent group-hover:scale-125 transition-transform duration-300" size={48} />
                   </div>
                   <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">LinkedIn</h3>
-                  <a href="https://linkedin.com/in/lokesh-tiwari-" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-[#14B8A6] font-semibold hover:underline transition-all duration-200">
-                    @LokeshTiwari
+                  <a href="https://www.linkedin.com/in/lokesh-tiwari-24898b1b3/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-[#14B8A6] font-semibold hover:underline transition-all duration-200">
+                    Lokesh Tiwari
                   </a>
                 </div>
 
