@@ -1,122 +1,90 @@
 [
   {
     "id": 1,
-    "title": "Real-time Data Analytics Dashboard",
-    "description": "Built an interactive dashboard that processes and visualizes real-time data streams from multiple sources. Features include live metrics, custom reports, and predictive insights.",
-    "image": "📊",
-    "tags": ["React", "Python", "Data Viz", "PostgreSQL"],
-    "category": "Analytics",
-    "link": "https://example.com",
-    "github": "https://github.com",
-    "featured": true,
-    "metrics": {
-      "performance": "94%",
-      "accuracy": "99.2%"
-    }
-  },
-  {
-    "id": 2,
-    "title": "Customer Segmentation ML Model",
-    "description": "Machine learning model using clustering algorithms to segment customers for targeted marketing campaigns. Achieved 94% accuracy with improved targeting ROI.",
-    "image": "🤖",
-    "tags": ["ML", "Python", "Scikit-learn", "Analytics"],
-    "category": "Machine Learning",
-    "link": "https://example.com",
-    "github": "https://github.com",
+    "title": "Social Media Extremism Detection",
+    "description": "Deep learning solution using fine-tuned HuggingFace Transformers for detecting extremist content on social media. Achieved 94% accuracy with fine-tuned model.",
+    "image": "🧠",
+    "tags": ["NLP", "Deep Learning", "Transformers", "HuggingFace"],
+    "category": "Deep Learning",
+    "link": "https://github.com/LokeshTiwari004/extremism-detection",
+    "github": "https://github.com/LokeshTiwari004/extremism-detection",
     "featured": true,
     "metrics": {
       "accuracy": "94%",
-      "segments": "12"
-    }
+      "models_tested": "6"
+    },
+    "details": "Conducted comparative analysis with classical ML models (Logistic Regression, SVC, MLPClassifier, XGBoost). Fine-tuned transformer models achieved the highest accuracy.",
+    "keyFeatures": [
+      "HuggingFace transformer fine-tuning",
+      "Multi-model comparison framework",
+      "94% classification accuracy",
+      "Real-time content detection"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Diabetes Prediction",
+    "description": "2-layer Feed Forward Neural Network built with PyTorch Lightning for large-scale tabular binary classification with Optuna hyperparameter optimization.",
+    "image": "🏥",
+    "tags": ["PyTorch", "Neural Networks", "Deep Learning", "Python"],
+    "category": "Deep Learning",
+    "link": "https://github.com/LokeshTiwari004/diabetes-prediction",
+    "github": "https://github.com/LokeshTiwari004/diabetes-prediction",
+    "featured": true,
+    "metrics": {
+      "metric": "Binary AUROC",
+      "optimization": "Optuna"
+    },
+    "details": "Implemented robust preprocessing pipeline with custom OutlierClipper and ColumnTransformer. Optimized hyperparameters using Optuna for learning rate, hidden dimensions, and dropout.",
+    "keyFeatures": [
+      "PyTorch Lightning framework",
+      "Custom preprocessing pipeline",
+      "Optuna hyperparameter optimization",
+      "Binary classification with AUROC metric"
+    ]
   },
   {
     "id": 3,
-    "title": "Web Scraping & Data Pipeline",
-    "description": "Automated web scraper with ETL pipeline for gathering and processing competitive intelligence data. Handles 10K+ records daily with 99.8% reliability.",
-    "image": "🕷️",
-    "tags": ["Python", "Web Scraping", "ETL", "Automation"],
-    "category": "Data Engineering",
-    "link": "https://example.com",
-    "github": "https://github.com",
-    "featured": false,
+    "title": "Loan Payback Prediction",
+    "description": "Binary classifier for 590k+ financial records, achieving 0.922 ROC AUC in Kaggle competition with automated XGBoost optimization.",
+    "image": "💳",
+    "tags": ["Machine Learning", "XGBoost", "Classification", "Python"],
+    "category": "Machine Learning",
+    "link": "https://github.com/LokeshTiwari004/loan-prediction",
+    "github": "https://github.com/LokeshTiwari004/loan-prediction",
+    "featured": true,
     "metrics": {
-      "reliability": "99.8%",
-      "daily_records": "10K+"
-    }
+      "roc_auc": "0.922",
+      "records": "590K+"
+    },
+    "details": "Built automated preprocessing pipelines using ColumnTransformer and optimized XGBoost hyperparameters to handle significant class imbalance. Managed end-to-end workflow with automated Kaggle submissions.",
+    "keyFeatures": [
+      "590K+ records processed",
+      "Class imbalance handling",
+      "0.922 ROC AUC score",
+      "Automated Kaggle submissions"
+    ]
   },
   {
     "id": 4,
-    "title": "Sentiment Analysis API",
-    "description": "REST API for analyzing sentiment from text using NLP and deep learning models. Achieves 89% accuracy across multiple languages with sub-100ms response times.",
-    "image": "💬",
-    "tags": ["NLP", "Python", "FastAPI", "Deep Learning"],
-    "category": "Machine Learning",
-    "link": "https://example.com",
-    "github": "https://github.com",
+    "title": "Vehicle Parking Management System",
+    "description": "Multi-user web application built with Flask for managing parking lots, spots, and vehicle reservations with dynamic capacity adjustments.",
+    "image": "🅿️",
+    "tags": ["Flask", "Python", "Web Development", "SQLAlchemy"],
+    "category": "Web Development",
+    "link": "https://github.com/LokeshTiwari004/parking-management",
+    "github": "https://github.com/LokeshTiwari004/parking-management",
     "featured": false,
     "metrics": {
-      "accuracy": "89%",
-      "languages": "5"
-    }
-  },
-  {
-    "id": 5,
-    "title": "Time Series Forecasting System",
-    "description": "ARIMA and Prophet-based forecasting models predicting sales trends with 92% accuracy. Includes confidence intervals and anomaly detection.",
-    "image": "📈",
-    "tags": ["Time Series", "Python", "Statistics", "Forecasting"],
-    "category": "Analytics",
-    "link": "https://example.com",
-    "github": "https://github.com",
-    "featured": false,
-    "metrics": {
-      "accuracy": "92%",
-      "mape": "5.2%"
-    }
-  },
-  {
-    "id": 6,
-    "title": "Image Classification Model",
-    "description": "CNN-based deep learning model for product classification achieving 95% accuracy on validation set. Handles 50+ product categories.",
-    "image": "🖼️",
-    "tags": ["Deep Learning", "CNN", "TensorFlow", "Computer Vision"],
-    "category": "Machine Learning",
-    "link": "https://example.com",
-    "github": "https://github.com",
-    "featured": true,
-    "metrics": {
-      "accuracy": "95%",
-      "categories": "50+"
-    }
-  },
-  {
-    "id": 7,
-    "title": "Data Quality Monitoring System",
-    "description": "Automated system for monitoring data quality across multiple sources. Detects anomalies, missing values, and data drift with configurable alerts.",
-    "image": "✅",
-    "tags": ["Python", "Data Quality", "Monitoring", "Automation"],
-    "category": "Data Engineering",
-    "link": "https://example.com",
-    "github": "https://github.com",
-    "featured": false,
-    "metrics": {
-      "sources": "15+",
-      "uptime": "99.9%"
-    }
-  },
-  {
-    "id": 8,
-    "title": "Recommendation Engine",
-    "description": "Collaborative filtering based recommendation system serving 1M+ users. Uses matrix factorization for personalized product recommendations.",
-    "image": "⭐",
-    "tags": ["Machine Learning", "Python", "Recommendation Systems", "Scalable"],
-    "category": "Machine Learning",
-    "link": "https://example.com",
-    "github": "https://github.com",
-    "featured": true,
-    "metrics": {
-      "users": "1M+",
-      "ctr": "12.5%"
-    }
+      "framework": "Flask",
+      "database": "SQLite"
+    },
+    "details": "Engineered robust SQLAlchemy logic for dynamic capacity adjustments and cascading deletes. Implemented Jinja2 filters for accurate billing calculations.",
+    "keyFeatures": [
+      "Multi-user management system",
+      "Dynamic capacity adjustments",
+      "Real-time billing calculations",
+      "SQLite database integration"
+    ]
   }
 ]

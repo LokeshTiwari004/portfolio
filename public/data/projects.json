@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Social Media Extremism Detection",
-    "description": "Deep learning solution using fine-tuned HuggingFace Transformers for detecting extremist content on social media. Conducted comparative analysis with classical ML models (Logistic Regression, SVC, MLPClassifier, XGBoost) achieving 94% accuracy with fine-tuned model.",
+    "description": "Deep learning solution using fine-tuned HuggingFace Transformers for detecting extremist content on social media. Achieved 94% accuracy with fine-tuned model.",
     "image": "🧠",
     "tags": ["NLP", "Deep Learning", "Transformers", "HuggingFace"],
     "category": "Deep Learning",
@@ -12,12 +12,19 @@
     "metrics": {
       "accuracy": "94%",
       "models_tested": "6"
-    }
+    },
+    "details": "Conducted comparative analysis with classical ML models (Logistic Regression, SVC, MLPClassifier, XGBoost). Fine-tuned transformer models achieved the highest accuracy.",
+    "keyFeatures": [
+      "HuggingFace transformer fine-tuning",
+      "Multi-model comparison framework",
+      "94% classification accuracy",
+      "Real-time content detection"
+    ]
   },
   {
     "id": 2,
     "title": "Diabetes Prediction",
-    "description": "2-layer Feed Forward Neural Network built with PyTorch Lightning for large-scale tabular binary classification. Implemented robust preprocessing pipeline with custom OutlierClipper and ColumnTransformer. Optimized hyperparameters using Optuna (Learning Rate, Hidden Dimensions, Dropout).",
+    "description": "2-layer Feed Forward Neural Network built with PyTorch Lightning for large-scale tabular binary classification with Optuna hyperparameter optimization.",
     "image": "🏥",
     "tags": ["PyTorch", "Neural Networks", "Deep Learning", "Python"],
     "category": "Deep Learning",
@@ -27,12 +34,19 @@
     "metrics": {
       "metric": "Binary AUROC",
       "optimization": "Optuna"
-    }
+    },
+    "details": "Implemented robust preprocessing pipeline with custom OutlierClipper and ColumnTransformer. Optimized hyperparameters using Optuna for learning rate, hidden dimensions, and dropout.",
+    "keyFeatures": [
+      "PyTorch Lightning framework",
+      "Custom preprocessing pipeline",
+      "Optuna hyperparameter optimization",
+      "Binary classification with AUROC metric"
+    ]
   },
   {
     "id": 3,
     "title": "Loan Payback Prediction",
-    "description": "Binary classifier developed for 590k+ financial records, achieving 0.922 ROC AUC in Kaggle competition. Built automated preprocessing pipelines using ColumnTransformer and optimized XGBoost hyperparameters to handle significant class imbalance. Managed end-to-end workflow with automated Kaggle submissions.",
+    "description": "Binary classifier for 590k+ financial records, achieving 0.922 ROC AUC in Kaggle competition with automated XGBoost optimization.",
     "image": "💳",
     "tags": ["Machine Learning", "XGBoost", "Classification", "Python"],
     "category": "Machine Learning",
@@ -42,12 +56,19 @@
     "metrics": {
       "roc_auc": "0.922",
       "records": "590K+"
-    }
+    },
+    "details": "Built automated preprocessing pipelines using ColumnTransformer and optimized XGBoost hyperparameters to handle significant class imbalance. Managed end-to-end workflow with automated Kaggle submissions.",
+    "keyFeatures": [
+      "590K+ records processed",
+      "Class imbalance handling",
+      "0.922 ROC AUC score",
+      "Automated Kaggle submissions"
+    ]
   },
   {
     "id": 4,
     "title": "Vehicle Parking Management System",
-    "description": "Multi-user web application built with Flask for managing parking lots, spots, and vehicle reservations. Engineered robust SQLAlchemy logic for dynamic capacity adjustments and cascading deletes. Resolved template pathing errors and implemented Jinja2 filters for accurate billing calculations.",
+    "description": "Multi-user web application built with Flask for managing parking lots, spots, and vehicle reservations with dynamic capacity adjustments.",
     "image": "🅿️",
     "tags": ["Flask", "Python", "Web Development", "SQLAlchemy"],
     "category": "Web Development",
@@ -57,6 +78,13 @@
     "metrics": {
       "framework": "Flask",
       "database": "SQLite"
-    }
+    },
+    "details": "Engineered robust SQLAlchemy logic for dynamic capacity adjustments and cascading deletes. Implemented Jinja2 filters for accurate billing calculations.",
+    "keyFeatures": [
+      "Multi-user management system",
+      "Dynamic capacity adjustments",
+      "Real-time billing calculations",
+      "SQLite database integration"
+    ]
   }
 ]
