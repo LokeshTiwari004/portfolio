@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ArrowRight, Download, ExternalLink, Code, Mail, Phone, ChevronDown } from 'lucide-react'
+import { ArrowRight, Download, ExternalLink, Code, Mail, Linkedin, ChevronDown } from 'lucide-react'
 import { loadProjectsData } from '../lib/markdown'
 import ContactForm from '../components/ContactForm'
 import { useIntersectionObserver } from '../utils/useIntersectionObserver'
@@ -101,7 +101,7 @@ export default function Landing() {
             </div>
 
             {/* Stats */}
-             <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-16">
+             <div className="grid grid-cols-2 gap-8 max-w-xl mx-auto mt-16">
                <div className="text-center">
                  <div className="text-5xl font-bold gradient-text mb-2">9.16</div>
                  <p className="text-slate-600 dark:text-[#94A3B8]">CGPA</p>
@@ -109,10 +109,6 @@ export default function Landing() {
                <div className="text-center">
                  <div className="text-5xl font-bold gradient-text mb-2">4</div>
                  <p className="text-slate-600 dark:text-[#94A3B8]">Projects</p>
-               </div>
-               <div className="text-center">
-                 <div className="text-5xl font-bold gradient-text mb-2">94%</div>
-                 <p className="text-slate-600 dark:text-[#94A3B8]">Best Accuracy</p>
                </div>
              </div>
           </div>
@@ -353,15 +349,15 @@ export default function Landing() {
                  </a>
                </div>
 
-               <div className="card text-center hover:border-accent hover:scale-105 hover:shadow-xl transition-all duration-300 active:scale-95">
-                 <div className="mb-4 flex justify-center transition-all duration-300 group-hover:scale-110">
-                   <Phone className="text-accent group-hover:scale-125 transition-transform duration-300" size={48} />
-                 </div>
-                 <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">Phone</h3>
-                 <a href="tel:+916386336910" className="text-accent hover:text-[#14B8A6] font-semibold hover:underline transition-all duration-200">
-                   +91 6386 336 910
-                 </a>
-               </div>
+                <div className="card text-center hover:border-accent hover:scale-105 hover:shadow-xl transition-all duration-300 active:scale-95">
+                  <div className="mb-4 flex justify-center transition-all duration-300 group-hover:scale-110">
+                    <Linkedin className="text-accent group-hover:scale-125 transition-transform duration-300" size={48} />
+                  </div>
+                  <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">LinkedIn</h3>
+                  <a href="https://linkedin.com/in/lokesh-tiwari-" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-[#14B8A6] font-semibold hover:underline transition-all duration-200">
+                    @LokeshTiwari
+                  </a>
+                </div>
 
                <div className="card text-center hover:border-accent hover:scale-105 hover:shadow-xl transition-all duration-300 active:scale-95">
                  <div className="mb-4 flex justify-center transition-all duration-300 group-hover:scale-110">
