@@ -112,4 +112,72 @@
    .scroll-container::-webkit-scrollbar-thumb:hover {
      background: rgba(20, 184, 166, 0.5);
    }
+
+   /* Reveal animations */
+   @keyframes fadeInUp {
+     from {
+       opacity: 0;
+       transform: translateY(30px);
+     }
+     to {
+       opacity: 1;
+       transform: translateY(0);
+     }
+   }
+
+   @keyframes fadeInLeft {
+     from {
+       opacity: 0;
+       transform: translateX(-30px);
+     }
+     to {
+       opacity: 1;
+       transform: translateX(0);
+     }
+   }
+
+   @keyframes fadeInRight {
+     from {
+       opacity: 0;
+       transform: translateX(30px);
+     }
+     to {
+       opacity: 1;
+       transform: translateX(0);
+     }
+   }
+
+   @keyframes slideInUp {
+     from {
+       opacity: 0;
+       transform: translateY(60px);
+     }
+     to {
+       opacity: 1;
+       transform: translateY(0);
+     }
+   }
+
+   .reveal-up {
+     animation: fadeInUp 0.8s ease-out forwards;
+   }
+
+   .reveal-left {
+     animation: fadeInLeft 0.8s ease-out forwards;
+   }
+
+   .reveal-right {
+     animation: fadeInRight 0.8s ease-out forwards;
+   }
+
+   .slide-up {
+     animation: slideInUp 0.8s ease-out forwards;
+   }
+
+   /* Stagger animations for multiple elements */
+   .stagger-1 { animation-delay: 0.1s; }
+   .stagger-2 { animation-delay: 0.2s; }
+   .stagger-3 { animation-delay: 0.3s; }
+   .stagger-4 { animation-delay: 0.4s; }
+   .stagger-5 { animation-delay: 0.5s; }
 }

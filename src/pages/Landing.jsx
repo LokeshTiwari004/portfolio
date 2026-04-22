@@ -1,12 +1,20 @@
 import { useState, useEffect } from 'react'
-import { ArrowRight, Download, ExternalLink, Code, Mail, Phone } from 'lucide-react'
+import { ArrowRight, Download, ExternalLink, Code, Mail, Phone, ChevronDown } from 'lucide-react'
 import { loadProjectsData } from '../lib/markdown'
 import ContactForm from '../components/ContactForm'
+import { useIntersectionObserver } from '../utils/useIntersectionObserver'
 
 export default function Landing() {
   const [featuredProjects, setFeaturedProjects] = useState([])
   const [loading, setLoading] = useState(true)
   const [scrollY, setScrollY] = useState(0)
+  const [expandedProject, setExpandedProject] = useState(null)
+
+  // Intersection observers for sections
+  const [heroRef, heroVisible] = useIntersectionObserver()
+  const [aboutRef, aboutVisible] = useIntersectionObserver()
+  const [projectsRef, projectsVisible] = useIntersectionObserver()
+  const [contactRef, contactVisible] = useIntersectionObserver()
 
   useEffect(() => {
     const loadProjects = async () => {
@@ -41,8 +49,9 @@ export default function Landing() {
     <div className="w-full">
       {/* HERO SECTION with Parallax */}
       <section
+        ref={heroRef}
         id="hero"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+        className={`relative min-h-screen flex items-center justify-center overflow-hidden pt-20 ${heroVisible ? 'reveal-up' : ''}`}
         style={{ backgroundPosition: `0 ${scrollY * 0.5}px` }}
       >
         {/* Parallax Background */}
@@ -78,15 +87,15 @@ export default function Landing() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
-              <a href="#projects" className="btn-primary inline-flex items-center justify-center gap-2">
+              <a href="#projects" className="btn-primary inline-flex items-center justify-center gap-2 hover:shadow-lg active:scale-95 transition-all duration-200 group">
                 View My Work
-                <ArrowRight size={20} />
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
               </a>
-              <a href="#contact" className="btn-secondary inline-flex items-center justify-center gap-2">
+              <a href="#contact" className="btn-secondary inline-flex items-center justify-center gap-2 hover:shadow-lg active:scale-95 transition-all duration-200">
                 Get In Touch
               </a>
-              <a href="/Resume.pdf" download="Lokesh_Tiwari_Resume.pdf" className="btn-secondary inline-flex items-center justify-center gap-2">
-                <Download size={20} />
+              <a href="/Resume.pdf" download="Lokesh_Tiwari_Resume.pdf" className="btn-secondary inline-flex items-center justify-center gap-2 hover:shadow-lg active:scale-95 transition-all duration-200 group">
+                <Download size={20} className="group-hover:animate-bounce" />
                 Download Resume
               </a>
             </div>
@@ -118,7 +127,11 @@ export default function Landing() {
       </section>
 
       {/* ABOUT SECTION */}
-      <section id="about" className="py-32 bg-slate-100 dark:bg-[#0A0F1F] transition-colors duration-300">
+      <section 
+        ref={aboutRef}
+        id="about" 
+        className={`py-32 bg-slate-100 dark:bg-[#0A0F1F] transition-colors duration-300 ${aboutVisible ? 'reveal-up' : ''}`}
+      >
         <div className="container mx-auto px-4">
           <h2 className="text-5xl md:text-6xl font-bold mb-16 text-center">About Me</h2>
 
@@ -132,58 +145,62 @@ export default function Landing() {
               </p>
             </div>
 
-            {/* Skills Grid */}
-            <div className="mb-20">
-              <h3 className="text-3xl font-bold mb-8">Technical Skills</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-                {Object.entries(skills).map(([category, skillList]) => (
-                  <div key={category} className="card hover:border-accent transition-all duration-300">
-                    <h4 className="font-bold text-[#14B8A6] mb-4">{category}</h4>
-                    <ul className="space-y-2">
-                      {skillList.map((skill) => (
-                        <li key={skill} className="text-slate-600 dark:text-[#94A3B8] text-sm flex items-start">
-                          <span className="text-accent mr-2">→</span>
-                          {skill}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
+             {/* Skills Grid */}
+             <div className="mb-20">
+               <h3 className="text-3xl font-bold mb-8">Technical Skills</h3>
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                 {Object.entries(skills).map(([category, skillList], idx) => (
+                   <div key={category} className={`card hover:border-accent hover:scale-105 hover:shadow-lg transition-all duration-300 active:scale-95 ${aboutVisible ? `reveal-up stagger-${idx + 1}` : ''}`}>
+                     <h4 className="font-bold text-[#14B8A6] mb-4 group-hover:text-[#20C997] transition-colors duration-200">{category}</h4>
+                     <ul className="space-y-2">
+                       {skillList.map((skill) => (
+                         <li key={skill} className="text-slate-600 dark:text-[#94A3B8] text-sm flex items-start hover:text-[#14B8A6] transition-colors duration-200 cursor-default">
+                           <span className="text-accent mr-2 group-hover:text-[#20C997] transition-colors duration-200">→</span>
+                           {skill}
+                         </li>
+                       ))}
+                     </ul>
+                   </div>
+                 ))}
+               </div>
+             </div>
 
-            {/* Education */}
-            <div>
-              <h3 className="text-3xl font-bold mb-8">Education</h3>
-              <div className="space-y-6">
-                <div className="card">
-                  <div className="flex justify-between items-start mb-2">
-                    <div>
-                      <h4 className="text-2xl font-bold text-slate-900 dark:text-white">BS in Data Science and Applications</h4>
-                      <p className="text-[#14B8A6] font-semibold">Indian Institute of Technology Madras</p>
-                    </div>
-                    <span className="text-slate-600 dark:text-[#94A3B8]">2022 - 2027</span>
-                  </div>
-                  <p className="text-slate-600 dark:text-[#94A3B8]">CGPA: 9.16/10.0</p>
-                </div>
-                <div className="card">
-                  <div className="flex justify-between items-start mb-2">
-                    <div>
-                      <h4 className="text-2xl font-bold text-slate-900 dark:text-white">High School & Intermediate</h4>
-                      <p className="text-[#14B8A6] font-semibold">Central Hindu Boys School</p>
-                    </div>
-                    <span className="text-slate-600 dark:text-[#94A3B8]">2017 - 2021</span>
-                  </div>
-                  <p className="text-slate-600 dark:text-[#94A3B8]">Percentage: 95%</p>
-                </div>
-              </div>
-            </div>
+             {/* Education */}
+             <div>
+               <h3 className="text-3xl font-bold mb-8">Education</h3>
+               <div className="space-y-6">
+                 <div className="card hover:border-accent hover:scale-105 hover:shadow-lg transition-all duration-300 active:scale-95">
+                   <div className="flex justify-between items-start mb-2">
+                     <div>
+                       <h4 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-[#14B8A6] transition-colors duration-200">BS in Data Science and Applications</h4>
+                       <p className="text-[#14B8A6] font-semibold group-hover:text-[#20C997] transition-colors duration-200">Indian Institute of Technology Madras</p>
+                     </div>
+                     <span className="text-slate-600 dark:text-[#94A3B8]">2022 - 2027</span>
+                   </div>
+                   <p className="text-slate-600 dark:text-[#94A3B8]">CGPA: 9.16/10.0</p>
+                 </div>
+                 <div className="card hover:border-accent hover:scale-105 hover:shadow-lg transition-all duration-300 active:scale-95">
+                   <div className="flex justify-between items-start mb-2">
+                     <div>
+                       <h4 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-[#14B8A6] transition-colors duration-200">High School & Intermediate</h4>
+                       <p className="text-[#14B8A6] font-semibold group-hover:text-[#20C997] transition-colors duration-200">Central Hindu Boys School</p>
+                     </div>
+                     <span className="text-slate-600 dark:text-[#94A3B8]">2017 - 2021</span>
+                   </div>
+                   <p className="text-slate-600 dark:text-[#94A3B8]">Percentage: 95%</p>
+                 </div>
+               </div>
+             </div>
           </div>
         </div>
       </section>
 
       {/* PROJECTS SECTION with Parallax */}
-      <section id="projects" className="py-32 relative overflow-hidden">
+      <section 
+        ref={projectsRef}
+        id="projects" 
+        className={`py-32 relative overflow-hidden ${projectsVisible ? 'reveal-up' : ''}`}
+      >
         {/* Parallax Background */}
         <div
           className="absolute inset-0 -z-10"
@@ -198,67 +215,105 @@ export default function Landing() {
            <div className="overflow-x-auto pb-4 -mx-4 px-4 scroll-container">
              <div className="flex gap-8 min-w-max">
                {!loading && featuredProjects.length > 0 ? (
-                 featuredProjects.map((project) => (
-                   <div
-                     key={project.id}
-                     className="card group w-96 flex-shrink-0 h-full hover:shadow-2xl transition-all duration-300"
-                   >
-                   <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                     {project.image}
-                   </div>
+                  featuredProjects.map((project) => (
+                    <div
+                      key={project.id}
+                      className={`card group w-96 flex-shrink-0 h-full hover:shadow-2xl transition-all duration-300 cursor-pointer`}
+                      onClick={() => setExpandedProject(expandedProject === project.id ? null : project.id)}
+                    >
+                      <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                        {project.image}
+                      </div>
 
-                   <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-[#14B8A6] transition-colors">
-                     {project.title}
-                   </h3>
+                      <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-[#14B8A6] transition-colors">
+                        {project.title}
+                      </h3>
 
-                   <p className="text-slate-600 dark:text-[#94A3B8] mb-4">
-                     {project.description}
-                   </p>
+                      <p className="text-slate-600 dark:text-[#94A3B8] mb-4">
+                        {project.description}
+                      </p>
 
-                   <div className="flex flex-wrap gap-2 mb-6">
-                     {project.tags.map((tag) => (
-                       <span
-                         key={tag}
-                         className="text-xs font-semibold text-accent bg-[#0F766E] bg-opacity-20 dark:bg-opacity-30 px-3 py-1 rounded-full"
-                       >
-                         {tag}
-                       </span>
-                     ))}
-                   </div>
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-xs font-semibold text-accent bg-[#0F766E] bg-opacity-20 dark:bg-opacity-30 px-3 py-1 rounded-full hover:bg-opacity-40 transition-all duration-200"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
 
-                   {project.metrics && (
-                     <div className="flex flex-wrap gap-4 mb-6 pb-6 border-b border-slate-200 dark:border-[#1E293B]">
-                       {Object.entries(project.metrics).map(([key, value]) => (
-                         <div key={key} className="flex flex-col">
-                           <span className="text-xs text-slate-600 dark:text-[#94A3B8] capitalize">{key}</span>
-                           <span className="text-sm font-bold text-[#14B8A6]">{value}</span>
-                         </div>
-                       ))}
-                     </div>
-                   )}
+                      {project.metrics && (
+                        <div className="flex flex-wrap gap-4 mb-6 pb-6 border-b border-slate-200 dark:border-[#1E293B]">
+                          {Object.entries(project.metrics).map(([key, value]) => (
+                            <div key={key} className="flex flex-col">
+                              <span className="text-xs text-slate-600 dark:text-[#94A3B8] capitalize">{key}</span>
+                              <span className="text-sm font-bold text-[#14B8A6]">{value}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
 
-                   <div className="flex gap-3 pt-4 border-t border-slate-200 dark:border-[#1E293B]">
-                     <a
-                       href={project.link}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="flex-1 inline-flex items-center justify-center gap-2 text-accent hover:text-[#14B8A6] transition-colors text-sm font-semibold py-2 rounded hover:bg-[#0F766E] hover:bg-opacity-20"
-                     >
-                       <ExternalLink size={16} />
-                       Demo
-                     </a>
-                     <a
-                       href={project.github}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="flex-1 inline-flex items-center justify-center gap-2 text-accent hover:text-[#14B8A6] transition-colors text-sm font-semibold py-2 rounded hover:bg-[#0F766E] hover:bg-opacity-20"
-                     >
-                       <Code size={16} />
-                       Code
-                     </a>
-                   </div>
-                 </div>
-               ))
+                      {/* Expandable Details */}
+                      {expandedProject === project.id && (
+                        <div className={`mb-6 pb-6 border-b border-slate-200 dark:border-[#1E293B] ${expandedProject === project.id ? 'slide-up' : ''}`}>
+                          <h4 className="font-bold text-[#14B8A6] mb-3 text-sm">Project Details</h4>
+                          {project.details && (
+                            <p className="text-xs text-slate-600 dark:text-[#94A3B8] mb-3 leading-relaxed">
+                              {project.details}
+                            </p>
+                          )}
+                          {project.keyFeatures && (
+                            <div>
+                              <p className="text-xs font-semibold text-slate-900 dark:text-white mb-2">Key Features:</p>
+                              <ul className="text-xs text-slate-600 dark:text-[#94A3B8] space-y-1">
+                                {project.keyFeatures.map((feature, idx) => (
+                                  <li key={idx} className="flex items-start">
+                                    <span className="text-accent mr-2">✓</span>
+                                    {feature}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      <div className="flex gap-3 pt-4 border-t border-slate-200 dark:border-[#1E293B]">
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 inline-flex items-center justify-center gap-2 text-accent hover:text-[#14B8A6] hover:bg-[#0F766E] hover:bg-opacity-20 transition-all duration-200 text-sm font-semibold py-2 rounded active:scale-95"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <ExternalLink size={16} />
+                          Demo
+                        </a>
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 inline-flex items-center justify-center gap-2 text-accent hover:text-[#14B8A6] hover:bg-[#0F766E] hover:bg-opacity-20 transition-all duration-200 text-sm font-semibold py-2 rounded active:scale-95"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <Code size={16} />
+                          Code
+                        </a>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setExpandedProject(expandedProject === project.id ? null : project.id);
+                          }}
+                          className={`flex-1 inline-flex items-center justify-center gap-2 text-accent hover:text-[#14B8A6] hover:bg-[#0F766E] hover:bg-opacity-20 transition-all duration-200 text-sm font-semibold py-2 rounded active:scale-95 ${expandedProject === project.id ? 'bg-[#0F766E] bg-opacity-20' : ''}`}
+                          title={expandedProject === project.id ? 'Hide details' : 'Show details'}
+                        >
+                          <ChevronDown size={16} className={`transition-transform duration-300 ${expandedProject === project.id ? 'rotate-180' : ''}`} />
+                        </button>
+                      </div>
+                    </div>
+                  ))
                ) : (
                  <div className="text-center py-8 w-full">
                    <p className="text-slate-600 dark:text-[#94A3B8]">Loading projects...</p>
@@ -277,37 +332,41 @@ export default function Landing() {
       </section>
 
       {/* CONTACT SECTION */}
-      <section id="contact" className="py-32 bg-gradient-to-br from-slate-100 to-slate-50 dark:from-[#0A0F1F] dark:to-[#0F172A] transition-colors duration-300">
+      <section 
+        ref={contactRef}
+        id="contact" 
+        className={`py-32 bg-gradient-to-br from-slate-100 to-slate-50 dark:from-[#0A0F1F] dark:to-[#0F172A] transition-colors duration-300 ${contactVisible ? 'reveal-up' : ''}`}
+      >
         <div className="container mx-auto px-4">
           <h2 className="text-5xl md:text-6xl font-bold mb-16 text-center">Let's Connect</h2>
 
-          <div className="max-w-5xl mx-auto">
-            {/* Contact Info Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-              <div className="card text-center hover:border-accent transition-all duration-300">
-                <div className="text-5xl mb-4 flex justify-center">
-                  <Mail className="text-accent" size={48} />
-                </div>
-                <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">Email</h3>
-                <a href="mailto:lokeshtiwari001vns@gmail.com" className="text-accent hover:text-[#14B8A6] font-semibold break-all">
-                  lokeshtiwari001vns@gmail.com
-                </a>
-              </div>
+           <div className="max-w-5xl mx-auto">
+             {/* Contact Info Cards */}
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+               <div className="card text-center hover:border-accent hover:scale-105 hover:shadow-xl transition-all duration-300 active:scale-95">
+                 <div className="mb-4 flex justify-center transition-all duration-300 group-hover:scale-110">
+                   <Mail className="text-accent group-hover:scale-125 transition-transform duration-300" size={48} />
+                 </div>
+                 <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">Email</h3>
+                 <a href="mailto:lokeshtiwari001vns@gmail.com" className="text-accent hover:text-[#14B8A6] font-semibold break-all hover:underline transition-all duration-200">
+                   lokeshtiwari001vns@gmail.com
+                 </a>
+               </div>
 
-              <div className="card text-center hover:border-accent transition-all duration-300">
-                <div className="text-5xl mb-4 flex justify-center">
-                  <Phone className="text-accent" size={48} />
-                </div>
-                <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">Phone</h3>
-                <a href="tel:+916386336910" className="text-accent hover:text-[#14B8A6] font-semibold">
-                  +91 6386 336 910
-                </a>
-              </div>
+               <div className="card text-center hover:border-accent hover:scale-105 hover:shadow-xl transition-all duration-300 active:scale-95">
+                 <div className="mb-4 flex justify-center transition-all duration-300 group-hover:scale-110">
+                   <Phone className="text-accent group-hover:scale-125 transition-transform duration-300" size={48} />
+                 </div>
+                 <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">Phone</h3>
+                 <a href="tel:+916386336910" className="text-accent hover:text-[#14B8A6] font-semibold hover:underline transition-all duration-200">
+                   +91 6386 336 910
+                 </a>
+               </div>
 
-              <div className="card text-center hover:border-accent transition-all duration-300">
-                <div className="text-5xl mb-4 flex justify-center">
-                  <Code className="text-accent" size={48} />
-                </div>
+               <div className="card text-center hover:border-accent hover:scale-105 hover:shadow-xl transition-all duration-300 active:scale-95">
+                 <div className="mb-4 flex justify-center transition-all duration-300 group-hover:scale-110">
+                   <Code className="text-accent group-hover:scale-125 transition-transform duration-300" size={48} />
+                 </div>
                 <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">GitHub</h3>
                 <a href="https://github.com/LokeshTiwari004" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-[#14B8A6] font-semibold">
                   @LokeshTiwari004
