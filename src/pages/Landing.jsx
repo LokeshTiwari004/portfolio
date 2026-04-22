@@ -230,7 +230,7 @@ export default function Landing() {
                       key={project.id}
                       data-card
                       className={`card group w-96 flex-shrink-0 hover:shadow-2xl transition-all duration-300 cursor-pointer`}
-                      style={{ height: maxCardHeight > 0 ? `${maxCardHeight}px` : 'auto' }}
+                      style={{ minHeight: maxCardHeight > 0 ? `${maxCardHeight}px` : 'auto' }}
                       onClick={() => setExpandedProject(expandedProject === project.id ? null : project.id)}
                     >
                       <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
