@@ -322,12 +322,12 @@ export default function Landing() {
              </div>
            </div>
 
-          <div className="text-center mt-16">
-            <a href="/blog" className="btn-primary inline-flex items-center gap-2">
-              View All Projects & Blog
-              <ArrowRight size={20} />
-            </a>
-          </div>
+           <div className="text-center mt-16">
+             <a href="/projects" className="btn-primary inline-flex items-center gap-2 hover:shadow-lg transition-all duration-200 group">
+               View All Projects
+               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
+             </a>
+           </div>
         </div>
       </section>
 

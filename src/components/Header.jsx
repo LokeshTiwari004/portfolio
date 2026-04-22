@@ -7,9 +7,9 @@ export default function Header() {
   const { isDark, toggleTheme } = useTheme()
 
   const navLinks = [
-    { label: 'Home', href: '#hero' },
+    { label: 'Home', href: '/' },
     { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
+    { label: 'Projects', href: '/projects' },
     { label: 'Contact', href: '#contact' },
     { label: 'Blog', href: '/blog' }
   ]

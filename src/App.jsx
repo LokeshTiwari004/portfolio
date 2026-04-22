@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Landing from './pages/Landing'
+import Projects from './pages/Projects'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import './App.css'
@@ -26,6 +27,7 @@ function AppContent() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
         </Routes>
