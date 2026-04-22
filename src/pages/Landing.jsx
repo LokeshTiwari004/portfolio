@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { ArrowRight, Download, ExternalLink, Code, Mail, Share2, ChevronDown } from 'lucide-react'
 import { loadProjectsData } from '../lib/markdown'
 import ContactForm from '../components/ContactForm'
@@ -9,6 +9,8 @@ export default function Landing() {
   const [loading, setLoading] = useState(true)
   const [scrollY, setScrollY] = useState(0)
   const [expandedProject, setExpandedProject] = useState(null)
+  const [maxCardHeight, setMaxCardHeight] = useState(0)
+  const projectsContainerRef = useRef(null)
 
   // Intersection observers for sections
   const [heroRef, heroVisible] = useIntersectionObserver()
@@ -36,6 +38,18 @@ export default function Landing() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Measure max card height and apply to all cards
+  useEffect(() => {
+    if (projectsContainerRef.current && !loading) {
+      const cards = projectsContainerRef.current.querySelectorAll('[data-card]')
+      if (cards.length > 0) {
+        const heights = Array.from(cards).map(card => card.offsetHeight)
+        const max = Math.max(...heights)
+        setMaxCardHeight(max)
+      }
+    }
+  }, [expandedProject, loading, featuredProjects])
 
   const skills = {
     "Programming": ["Python", "Java", "SQL", "Bash"],
@@ -209,12 +223,14 @@ export default function Landing() {
           <h2 className="text-5xl md:text-6xl font-bold mb-16 text-center">Featured Projects</h2>
 
            <div className="overflow-x-auto pb-4 -mx-4 px-4 scroll-container">
-             <div className="flex gap-8 min-w-max">
+             <div className="flex gap-8 min-w-max" ref={projectsContainerRef}>
                {!loading && featuredProjects.length > 0 ? (
                   featuredProjects.map((project) => (
                     <div
                       key={project.id}
-                      className={`card group w-96 flex-shrink-0 h-full min-h-[520px] hover:shadow-2xl transition-all duration-300 cursor-pointer`}
+                      data-card
+                      className={`card group w-96 flex-shrink-0 hover:shadow-2xl transition-all duration-300 cursor-pointer`}
+                      style={{ height: maxCardHeight > 0 ? `${maxCardHeight}px` : 'auto' }}
                       onClick={() => setExpandedProject(expandedProject === project.id ? null : project.id)}
                     >
                       <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
