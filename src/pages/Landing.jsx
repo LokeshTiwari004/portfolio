@@ -214,7 +214,7 @@ export default function Landing() {
                   featuredProjects.map((project) => (
                     <div
                       key={project.id}
-                      className={`card group w-96 flex-shrink-0 h-full hover:shadow-2xl transition-all duration-300 cursor-pointer`}
+                      className={`card group w-96 flex-shrink-0 h-full min-h-[520px] hover:shadow-2xl transition-all duration-300 cursor-pointer`}
                       onClick={() => setExpandedProject(expandedProject === project.id ? null : project.id)}
                     >
                       <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
