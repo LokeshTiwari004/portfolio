@@ -83,7 +83,7 @@ export default function Landing() {
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
             transform: `translateY(${scrollY * 0.3}px)`,
-            filter: `blur(${Math.max(0, 8 - scrollY / 100)}px)`,
+            filter: `blur(${Math.max(0, 4 - scrollY / 200)}px)`,
             opacity: 0.7
           }}
         >
