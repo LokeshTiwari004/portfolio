@@ -72,6 +72,10 @@ export async function loadMarkdownPost(filename) {
 // Load all markdown posts from a directory
 export async function loadAllMarkdownPosts() {
   const filenames = [
+    'data-science-iit-madras',
+    'extremism-detection-deep-dive',
+    'pytorch-transformers-guide',
+    'nlp-social-good',
     'getting-started-ml',
     'data-visualization-best-practices',
     'python-data-analysis',
