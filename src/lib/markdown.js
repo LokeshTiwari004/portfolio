@@ -1,4 +1,41 @@
-import matter from 'gray-matter'
+// Simple frontmatter parser that works in browser (doesn't rely on Node.js Buffer)
+function parseFrontmatter(content) {
+  const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/
+  const match = content.match(frontmatterRegex)
+
+  if (!match) {
+    return { data: {}, content }
+  }
+
+  const [, frontmatterStr, body] = match
+  const data = {}
+
+  // Parse YAML-like frontmatter
+  frontmatterStr.split('\n').forEach(line => {
+    const colonIndex = line.indexOf(':')
+    if (colonIndex === -1) return
+
+    const key = line.substring(0, colonIndex).trim()
+    let value = line.substring(colonIndex + 1).trim()
+
+    // Parse different value types
+    if (value.startsWith('[') && value.endsWith(']')) {
+      // Parse array: [Tag1, Tag2, Tag3]
+      value = value
+        .slice(1, -1)
+        .split(',')
+        .map(v => v.trim())
+    } else if (value === 'true') {
+      value = true
+    } else if (value === 'false') {
+      value = false
+    }
+
+    data[key] = value
+  })
+
+  return { data, content: body }
+}
 
 // Cache for loaded markdown files
 const markdownCache = {}
@@ -11,8 +48,12 @@ export async function loadMarkdownPost(filename) {
 
   try {
     const response = await fetch(`/markdown/${filename}.md`)
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${filename}`)
+    }
+    
     const text = await response.text()
-    const { data, content } = matter(text)
+    const { data, content } = parseFrontmatter(text)
     
     const post = {
       ...data,

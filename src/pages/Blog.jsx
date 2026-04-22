@@ -16,6 +16,7 @@ export default function Blog() {
     const loadPosts = async () => {
       try {
         const posts = await loadAllMarkdownPosts()
+        console.log('Loaded posts:', posts) // Debug logging
         setAllPosts(posts)
         
         // Extract unique categories
