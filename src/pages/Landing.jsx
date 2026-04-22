@@ -76,10 +76,19 @@ export default function Landing() {
         <div
           className="absolute inset-0 -z-10"
           style={{
-            background: 'linear-gradient(135deg, rgba(15, 118, 110, 0.1) 0%, rgba(20, 184, 166, 0.05) 100%)',
+            backgroundImage: 'url(/data/bg.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
             transform: `translateY(${scrollY * 0.3}px)`
           }}
         >
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(135deg, rgba(15, 118, 110, 0.1) 0%, rgba(20, 184, 166, 0.05) 100%)',
+            }}
+          ></div>
           <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#0F766E] to-transparent rounded-full blur-3xl opacity-20 animate-pulse" style={{ transform: `translateY(${scrollY * 0.2}px)` }}></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-[#14B8A6] to-transparent rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s', transform: `translateY(${scrollY * 0.25}px)` }}></div>
         </div>
