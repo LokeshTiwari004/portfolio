@@ -233,10 +233,11 @@ export default function Landing() {
                     <div
                       key={project.id}
                       data-card
-                      className={`card group w-96 flex-shrink-0 hover:shadow-2xl transition-all duration-300 cursor-pointer`}
+                      className={`card group w-96 flex-shrink-0 hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col`}
                       style={{ minHeight: expandedProject !== project.id && maxCardHeight > 0 ? `${maxCardHeight}px` : 'auto' }}
                       onClick={() => setExpandedProject(expandedProject === project.id ? null : project.id)}
                     >
+                      <div className="flex-1">
                       <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
                         {project.image}
                       </div>
@@ -295,8 +296,9 @@ export default function Landing() {
                           )}
                         </div>
                       )}
+                      </div>
 
-                      <div className="flex gap-3 pt-4 border-t border-slate-200 dark:border-[#1E293B]">
+                      <div className="flex gap-3 pt-4 border-t border-slate-200 dark:border-[#1E293B] mt-auto">
                         <a
                           href={project.link}
                           target="_blank"
