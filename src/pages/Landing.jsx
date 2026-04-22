@@ -39,17 +39,21 @@ export default function Landing() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Measure max card height and apply to all cards
+  // Measure max card height on initial load (when cards are collapsed)
   useEffect(() => {
     if (projectsContainerRef.current && !loading) {
       const cards = projectsContainerRef.current.querySelectorAll('[data-card]')
       if (cards.length > 0) {
-        const heights = Array.from(cards).map(card => card.offsetHeight)
-        const max = Math.max(...heights)
-        setMaxCardHeight(max)
+        // Use a timeout to ensure DOM is fully rendered before measuring
+        const timer = setTimeout(() => {
+          const heights = Array.from(cards).map(card => card.offsetHeight)
+          const max = Math.max(...heights)
+          setMaxCardHeight(max)
+        }, 0)
+        return () => clearTimeout(timer)
       }
     }
-  }, [expandedProject, loading, featuredProjects])
+  }, [loading])
 
   const skills = {
     "Programming": ["Python", "Java", "SQL", "Bash"],
