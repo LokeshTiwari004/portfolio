@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Search } from 'lucide-react'
 import { loadAllMarkdownPosts } from '../lib/markdown'
+import { useIntersectionObserver } from '../utils/useIntersectionObserver'
 
 export default function Blog() {
   const [allPosts, setAllPosts] = useState([])
@@ -9,6 +10,7 @@ export default function Blog() {
   const [searchQuery, setSearchQuery] = useState("")
   const [loading, setLoading] = useState(true)
   const [categories, setCategories] = useState(["All"])
+  const [blogRef, blogVisible] = useIntersectionObserver()
 
   useEffect(() => {
     const loadPosts = async () => {
