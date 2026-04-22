@@ -75,12 +75,7 @@ export async function loadAllMarkdownPosts() {
     'data-science-iit-madras',
     'extremism-detection-deep-dive',
     'pytorch-transformers-guide',
-    'nlp-social-good',
-    'getting-started-ml',
-    'data-visualization-best-practices',
-    'python-data-analysis',
-    'building-production-ml-models',
-    'advanced-sql-techniques'
+    'nlp-social-good'
   ]
 
   const posts = await Promise.all(
