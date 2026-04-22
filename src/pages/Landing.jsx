@@ -227,7 +227,7 @@ export default function Landing() {
           <h2 className="text-5xl md:text-6xl font-bold mb-16 text-center">Featured Projects</h2>
 
            <div className="overflow-x-auto pb-4 -mx-4 px-4 scroll-container">
-             <div className="flex gap-8 min-w-max" ref={projectsContainerRef}>
+             <div className="flex gap-8 min-w-max items-start" ref={projectsContainerRef}>
                {!loading && featuredProjects.length > 0 ? (
                   featuredProjects.map((project) => (
                     <div
